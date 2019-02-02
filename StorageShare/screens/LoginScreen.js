@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import * as firebase from 'firebase';
 import {
   StyleSheet,
   Text,
@@ -7,19 +8,25 @@ import {
   Dimensions,
 } from 'react-native';
 import { Input, Button } from 'react-native-elements';
-
 import { Font } from 'expo';
 import Icon from 'react-native-vector-icons/FontAwesome';
-
+// import UserAuth from '../Firebase/UserAuth';
 const SCREEN_WIDTH = Dimensions.get('window').width;
 const SCREEN_HEIGHT = Dimensions.get('window').height;
-
 const BG_IMAGE = require('../assets/images/wallpaper_5.jpg');
+var config = {
+  apiKey: "AIzaSyAIeKHtji35rfFJV3TLT50j8H0B2r-6SQQ",
+  authDomain: "share-d44e1.firebaseapp.com",
+  databaseURL: "https://share-d44e1.firebaseio.com",
+  projectId: "share-d44e1",
+  storageBucket: "",
+  messagingSenderId: "957883509992"
+};
+firebase.initializeApp(config);
 
 export default class LoginScreen extends Component {
   constructor(props) {
     super(props);
-
     this.state = {
       fontLoaded: false,
       email: '',
@@ -30,6 +37,26 @@ export default class LoginScreen extends Component {
     };
   }
 
+  signUpUser = (email, password) => {
+    try {
+        if (password.length < 6) {
+            alert("Please enter atleast 6 characters")
+            return;
+        }
+        firebase.auth().createUserWithEmailAndPassword("amirali@gmail.com", "HappyEver78!!")
+    } catch (error) {
+        console.log(error.toString())
+    }
+  }
+
+  loginUser = (email, password) => {
+    try {
+        firebase.auth().signInWithEmailAndPassword(email, password).then(function (user) { console.log(user) })
+    } catch (error) {
+        console.log(error.toString())
+    }
+  }
+
   async componentDidMount() {
     await Font.loadAsync({
       georgia: require('../assets/fonts/Georgia.ttf'),
@@ -37,27 +64,36 @@ export default class LoginScreen extends Component {
       light: require('../assets/fonts/Montserrat-Light.ttf'),
       bold: require('../assets/fonts/Montserrat-Bold.ttf'),
     });
-
     this.setState({ fontLoaded: true });
   }
-
   validateEmail(email) {
     var re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-
     return re.test(email);
   }
-
   submitLoginCredentials() {
     const { showLoading } = this.state;
-
+    try {
+      firebase.auth().signInWithEmailAndPassword(this.state.email, this.state.password).then(function (user) { console.log(user) })
+    } catch (error) {
+      console.log(error.toString())
+    }
     this.setState({
       showLoading: !showLoading,
     });
   }
-
+  createAccount() {
+    try {
+      if (this.state.password.length < 6) {
+          alert("Please enter atleast 6 characters")
+          return;
+      }
+      firebase.auth().createUserWithEmailAndPassword(this.state.email, this.state.password)
+  } catch (error) {
+      console.log(error.toString())
+  }
+  }
   render() {
     const { email, password, email_valid, showLoading } = this.state;
-
     return (
       <View style={styles.container}>
         <ImageBackground source={BG_IMAGE} style={styles.bgImage}>
@@ -154,7 +190,7 @@ export default class LoginScreen extends Component {
                   activeOpacity={0.5}
                   titleStyle={{ color: 'white', fontSize: 15 }}
                   containerStyle={{ marginTop: -10 }}
-                  onPress={() => console.log('Account created')}
+                  onPress={this.createAccount.bind(this)}
                 />
               </View>
             </View>
@@ -166,7 +202,6 @@ export default class LoginScreen extends Component {
     );
   }
 }
-
 const styles = StyleSheet.create({
   container: {
     flex: 1,
