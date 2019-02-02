@@ -8,39 +8,25 @@ const firebaseConfig = {
     storageBucket: "storageshare-d45aa.appspot.com",
 }
 
+import * as firebase from 'firebase';
 firebase.initializeApp(firebaseConfig);
 
-export default class UserAuth extends React.Component {
-
-    constructor(props) {
-        super(props)
-
-        this.state = ({
-            email: '',
-            password: ''
-        })
-    }
-    
-    signUpUser = (email, password) => {
-
-        try {
-            if (this.state.password.length < 6) {
-                alert("Please enter atleast 6 characters")
-                return;
-            }
-
-            firebase.auth().createUserWithEmailAndPassword(email, password)
-        } catch (error) {
-            console.log(error.toString())
+signUpUser = (email, password) => {
+    try {
+        if (password.length < 6) {
+            alert("Please enter atleast 6 characters")
+            return;
         }
+        firebase.auth().createUserWithEmailAndPassword(email, password)
+    } catch (error) {
+        console.log(error.toString())
     }
+}
 
-    loginUser = (email, password) => {
-
-        try {
-            firebase.auth().signInWithEmailAndPassword(email, password).then(function (user) { console.log(user) })
-        } catch (error) {
-            console.log(error.toString())
-        }
+loginUser = (email, password) => {
+    try {
+        firebase.auth().signInWithEmailAndPassword(email, password).then(function (user) { console.log(user) })
+    } catch (error) {
+        console.log(error.toString())
     }
 }
