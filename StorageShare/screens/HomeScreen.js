@@ -16,6 +16,7 @@ import LoginScreen from './LoginScreen';
 import ListsScreen from './MainScreen';
 import ProfileScreen from './ProfileScreen';
 import ListingScreen from './ListingScreen';
+import HeaderBar from './Header';
 
 export default class HomeScreen extends React.Component {
   static navigationOptions = {
@@ -24,7 +25,10 @@ export default class HomeScreen extends React.Component {
 
   render() {
     return (
+      <View>
+      <HeaderBar/>
       <ListingScreen/>
+      </View>
     );
   }
 
