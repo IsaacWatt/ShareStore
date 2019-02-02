@@ -10,10 +10,10 @@ import {
 import { Input, Button } from 'react-native-elements';
 import { Font } from 'expo';
 import Icon from 'react-native-vector-icons/FontAwesome';
-// import UserAuth from '../Firebase/UserAuth';
+import UserAuth from '../Firebase/UserAuth';
 const SCREEN_WIDTH = Dimensions.get('window').width;
 const SCREEN_HEIGHT = Dimensions.get('window').height;
-const BG_IMAGE = require('../assets/images/wallpaper_5.jpg');
+const BG_IMAGE = require('../assets/images/wallpaper_4.jpg');
 var config = {
   apiKey: "AIzaSyAIeKHtji35rfFJV3TLT50j8H0B2r-6SQQ",
   authDomain: "share-d44e1.firebaseapp.com",
@@ -22,7 +22,10 @@ var config = {
   storageBucket: "",
   messagingSenderId: "957883509992"
 };
-firebase.initializeApp(config);
+
+if (!firebase.apps.length) {
+  firebase.initializeApp(config);
+}
 
 export default class LoginScreen extends Component {
   constructor(props) {
@@ -55,6 +58,10 @@ export default class LoginScreen extends Component {
     } catch (error) {
         console.log(error.toString())
     }
+  }
+
+  signUpWithNumber = (number) => {
+
   }
 
   async componentDidMount() {
@@ -185,12 +192,25 @@ export default class LoginScreen extends Component {
               />
               <View style={styles.footerView}>
                 <Button
-                  title="Create an Account"
-                  clear
-                  activeOpacity={0.5}
-                  titleStyle={{ color: 'white', fontSize: 15 }}
-                  containerStyle={{ marginTop: -10 }}
+                  title="SIGN UP"
+                  activeOpacity={1}
+                  underlayColor="transparent"
                   onPress={this.createAccount.bind(this)}
+                  loading={showLoading}
+                  loadingProps={{ size: 'small', color: 'white' }}
+                  disabled={!email_valid && password.length < 8}
+                  buttonStyle={{
+                    height: 50,
+                    width: 250,
+                    backgroundColor: 'transparent',
+                    borderWidth: 2,
+                    borderColor: 'white',
+                    borderRadius: 30,
+                  }}
+                  containerStyle={{ marginVertical: 10 }}
+                  titleStyle={{ fontWeight: 'bold', color: 'white' }}
+
+
                 />
               </View>
             </View>
