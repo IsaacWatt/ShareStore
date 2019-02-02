@@ -20,7 +20,7 @@ export default class HomeScreen extends React.Component {
   render() {
     return (
       <ThemeProvider>
-      <Button title="Hey!" />
+      <Button title="FCCK!" />
     </ThemeProvider>
 
     );
