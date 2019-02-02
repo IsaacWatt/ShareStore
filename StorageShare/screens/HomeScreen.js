@@ -12,6 +12,10 @@ import { WebBrowser } from 'expo';
 
 import { MonoText } from '../components/StyledText';
 import { Button, ThemeProvider } from 'react-native-elements';
+import LoginScreen from './LoginScreen';
+import ListsScreen from './MainScreen';
+import ProfileScreen from './ProfileScreen'
+
 export default class HomeScreen extends React.Component {
   static navigationOptions = {
     header: null,
@@ -19,10 +23,7 @@ export default class HomeScreen extends React.Component {
 
   render() {
     return (
-      <ThemeProvider>
-      <Button title="FCCK!" />
-    </ThemeProvider>
-
+      <LoginScreen/>
     );
   }
 
