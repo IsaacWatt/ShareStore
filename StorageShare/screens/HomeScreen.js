@@ -14,7 +14,8 @@ import { MonoText } from '../components/StyledText';
 import { Button, ThemeProvider } from 'react-native-elements';
 import LoginScreen from './LoginScreen';
 import ListsScreen from './MainScreen';
-import ProfileScreen from './ProfileScreen'
+import ProfileScreen from './ProfileScreen';
+import ListingScreen from './ListingScreen';
 
 export default class HomeScreen extends React.Component {
   static navigationOptions = {
@@ -23,7 +24,7 @@ export default class HomeScreen extends React.Component {
 
   render() {
     return (
-      <LoginScreen/>
+      <ListingScreen/>
     );
   }
 
