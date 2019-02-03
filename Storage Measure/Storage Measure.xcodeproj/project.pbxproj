@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		138B4EB8220686B6001CF774 /* StorageSpaceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 138B4EB7220686B6001CF774 /* StorageSpaceViewController.swift */; };
 		139F22B02205A4B00017B38B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 139F22AF2205A4B00017B38B /* AppDelegate.swift */; };
 		139F22B22205A4B00017B38B /* art.scnassets in Resources */ = {isa = PBXBuildFile; fileRef = 139F22B12205A4B00017B38B /* art.scnassets */; };
 		139F22B42205A4B00017B38B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 139F22B32205A4B00017B38B /* ViewController.swift */; };
@@ -38,6 +39,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		138B4EB7220686B6001CF774 /* StorageSpaceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageSpaceViewController.swift; sourceTree = "<group>"; };
 		139F22AC2205A4B00017B38B /* Storage Measure.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Storage Measure.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		139F22AF2205A4B00017B38B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		139F22B12205A4B00017B38B /* art.scnassets */ = {isa = PBXFileReference; lastKnownFileType = wrapper.scnassets; path = art.scnassets; sourceTree = "<group>"; };
@@ -108,6 +110,7 @@
 				139F22AF2205A4B00017B38B /* AppDelegate.swift */,
 				139F22B12205A4B00017B38B /* art.scnassets */,
 				139F22B32205A4B00017B38B /* ViewController.swift */,
+				138B4EB7220686B6001CF774 /* StorageSpaceViewController.swift */,
 				139F22DF2205B9F70017B38B /* Box.swift */,
 				139F22B52205A4B00017B38B /* Main.storyboard */,
 				139F22B82205A4B30017B38B /* Assets.xcassets */,
@@ -271,6 +274,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				139F22E02205B9F70017B38B /* Box.swift in Sources */,
+				138B4EB8220686B6001CF774 /* StorageSpaceViewController.swift in Sources */,
 				139F22B42205A4B00017B38B /* ViewController.swift in Sources */,
 				139F22B02205A4B00017B38B /* AppDelegate.swift in Sources */,
 				139F22E22205DC750017B38B /* Grid.swift in Sources */,

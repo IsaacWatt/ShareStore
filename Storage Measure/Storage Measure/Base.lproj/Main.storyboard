@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BV1-FR-VrT">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="iB6-23-bce">
     <device id="retina5_9" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -37,7 +37,46 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SZV-WD-TEh" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="136.80000000000001" y="114.69265367316342"/>
+            <point key="canvasLocation" x="724" y="101"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="R5k-4z-1NB">
+            <objects>
+                <viewController id="iB6-23-bce" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="0Be-Ap-cmT">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GFC-gv-TAb">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="391"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Measure Storage Space"/>
+                                <connections>
+                                    <action selector="MeasureStorage:" destination="gQS-nS-NwP" eventType="touchUpInside" id="sFr-WW-AjQ"/>
+                                    <segue destination="BV1-FR-VrT" kind="show" id="Csc-aL-PQ1"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FDZ-50-sVY">
+                                <rect key="frame" x="0.0" y="387" width="375" height="391"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Measure Required Storage Space"/>
+                                <connections>
+                                    <action selector="RequestStorage:" destination="gQS-nS-NwP" eventType="touchUpInside" id="pNF-DH-ftb"/>
+                                    <segue destination="BV1-FR-VrT" kind="show" id="Kba-Zz-FYd"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="RTW-QZ-zeA"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="rVc-Lq-ezg" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="gQS-nS-NwP" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="-47" y="100"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="Csc-aL-PQ1"/>
+    </inferredMetricsTieBreakers>
 </document>

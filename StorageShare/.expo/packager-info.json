@@ -3,13 +3,7 @@
   "expoServerPort": null,
   "packagerPort": null,
   "packagerPid": null,
-  "expoServerNgrokUrl": null,
-  "packagerNgrokUrl": null,
-  "ngrokPid": null,
-  "expoServerPort": 19000,
-  "packagerPort": 19001,
-  "packagerPid": 70819,
   "expoServerNgrokUrl": "https://sy-k3i.anonymous.storageshare.exp.direct",
   "packagerNgrokUrl": "https://packager.sy-k3i.anonymous.storageshare.exp.direct",
-  "ngrokPid": 70836
+  "ngrokPid": 71852
 }

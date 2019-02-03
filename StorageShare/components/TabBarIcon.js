@@ -1,5 +1,5 @@
 import React from 'react';
-import { Icon } from 'expo';
+import { Icon } from 'react-native-elements';
 
 import Colors from '../constants/Colors';
 
