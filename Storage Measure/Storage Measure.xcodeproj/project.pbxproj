@@ -112,11 +112,11 @@
 				139F22B32205A4B00017B38B /* ViewController.swift */,
 				138B4EB7220686B6001CF774 /* StorageSpaceViewController.swift */,
 				139F22DF2205B9F70017B38B /* Box.swift */,
+				139F22E12205DC740017B38B /* Grid.swift */,
 				139F22B52205A4B00017B38B /* Main.storyboard */,
 				139F22B82205A4B30017B38B /* Assets.xcassets */,
 				139F22BA2205A4B30017B38B /* LaunchScreen.storyboard */,
 				139F22BD2205A4B30017B38B /* Info.plist */,
-				139F22E12205DC740017B38B /* Grid.swift */,
 				139F22E32205E5490017B38B /* contents.json */,
 			);
 			path = "Storage Measure";

@@ -145,6 +145,8 @@ class StorageSpaceViewController: UIViewController,  ARSCNViewDelegate  {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        print("view did load")
+        
         // Set the view's delegate
         sceneView.delegate = self
         
