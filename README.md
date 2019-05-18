@@ -2,7 +2,7 @@
 <table align="center">
     <tr>
         <td>
-            <img src="" width="5000px">
+            <img src="logo.jpg" width="500px">
         </td>
     </tr>
 </table>
